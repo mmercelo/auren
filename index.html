@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUREN STUDIO</title>
+<meta name="description" content="AUREN STUDIO — minimalist clothing essentials.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --ink: #111111;
+    --grey: #8C8C8C;
+    --light-grey: #E8E8E8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+  .logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.35em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 0.5; }
+  .nav-links a:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+
+  /* HERO */
+  .hero {
+    padding: 100px 32px 80px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-weight: 600;
+    font-size: clamp(2.4rem, 7vw, 4.5rem);
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+  .hero p {
+    color: var(--grey);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    font-size: 1rem;
+  }
+  .cta {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 16px 44px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .cta:hover { background: var(--grey); }
+  .cta:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+  /* PRODUCTS */
+  .products {
+    padding: 60px 32px 100px;
+    border-top: 1px solid var(--light-grey);
+  }
+  .section-head {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .section-head .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 12px;
+  }
+  .section-head h2 {
+    font-weight: 600;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: 0.04em;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 28px;
+  }
+  .product-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--light-grey);
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .product h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .product .price {
+    color: var(--grey);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+  .buy-btn {
+    display: block;
+    text-align: center;
+    background: var(--grey);
+    color: var(--bg);
+    padding: 13px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .buy-btn:hover { background: var(--ink); }
+  .buy-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+  .view-all {
+    text-align: center;
+    margin-top: 56px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 48px 32px;
+    border-top: 1px solid var(--light-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.8rem;
+  }
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+  }
+  .footer-links a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .footer-links a:hover { opacity: 0.5; }
+  .footer-links a:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
+  .footer-mono {
+    color: var(--grey);
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    nav { flex-direction: column; gap: 16px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">AUREN STUDIO</a>
+  <ul class="nav-links">
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">New Collection</div>
+    <h1>AUREN STUDIO</h1>
+    <p>Minimal essentials, presented in Milan, 2026. Quality basics designed to last beyond the season.</p>
+    <a href="shop.html" class="cta">Shop now</a>
+  </div>
+</section>
+
+<section class="products" id="shop">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Featured</div>
+      <h2>The Collection</h2>
+    </div>
+    <div class="grid">
+      <div class="product">
+        <div class="product-img"><img src="images/product1.jpg" alt="Auren Studio Sweatshirt — Beige"></div>
+        <h3>Crewneck — Beige</h3>
+        <p class="price">£65</p>
+        <a href="https://buy.stripe.com/REPLACE_LINK_1" class="buy-btn">Buy now</a>
+      </div>
+      <div class="product">
+        <div class="product-img"><img src="images/product2.jpg" alt="Auren Studio Sweatshirt — Grey"></div>
+        <h3>Crewneck — Grey</h3>
+        <p class="price">£65</p>
+        <a href="https://buy.stripe.com/REPLACE_LINK_2" class="buy-btn">Buy now</a>
+      </div>
+      <div class="product">
+        <div class="product-img"><img src="images/product3.jpg" alt="Auren Studio Sweatshirt — Brown"></div>
+        <h3>Crewneck — Brown</h3>
+        <p class="price">£65</p>
+        <a href="https://buy.stripe.com/REPLACE_LINK_3" class="buy-btn">Buy now</a>
+      </div>
+    </div>
+    <div class="view-all">
+      <a href="shop.html" class="cta">View all products</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-mono">&copy; 2026 AUREN STUDIO</div>
+  <ul class="footer-links">
+    <li><a href="mailto:namedfame99@gmail.com">Support</a></li>
+    <li><a href="#">Instagram</a></li>
+    <li><a href="#">TikTok</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
